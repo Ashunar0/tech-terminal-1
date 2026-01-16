@@ -3,18 +3,18 @@
 ## Tasks
 
 - [ ] 1. プロジェクト基盤セットアップ
-- [ ] 1.1 Firebase 環境構築
+- [x] 1.1 Firebase 環境構築
   - Firebase SDK をインストールし、プロジェクトに接続する
   - 環境変数で Firebase 設定を管理する
   - Firestore コレクション `articles` を作成し、開発用のセキュリティルールを設定する
   - _Requirements: 7.1_
 
-- [ ] 1.2 shadcn/ui コンポーネントの追加
+- [x] 1.2 shadcn/ui コンポーネントの追加
   - 必要なコンポーネントをインストール（card, input, textarea, select, button, badge, dialog, alert-dialog, skeleton）
   - コンポーネントが正しく動作することを確認
   - _Requirements: 8.1, 8.2, 8.3, 8.4_
 
-- [ ] 1.3 (P) OGP パースライブラリのセットアップ
+- [x] 1.3 (P) OGP パースライブラリのセットアップ
   - open-graph-scraper をインストール
   - 型定義を確認し、必要に応じて追加
   - _Requirements: 2.1, 2.6_

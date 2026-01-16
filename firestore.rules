@@ -1,0 +1,10 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Articles collection - MVP: open access for development
+    // TODO: Add authentication rules before production deployment
+    match /articles/{articleId} {
+      allow read, write: if true;
+    }
+  }
+}
