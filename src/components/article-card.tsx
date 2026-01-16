@@ -21,7 +21,8 @@ const courseConfig: Record<
   python: {
     label: "Python",
     color: "text-blue-700 dark:text-blue-400",
-    bgColor: "bg-blue-50 dark:bg-blue-950/30 border-blue-200 dark:border-blue-900",
+    bgColor:
+      "bg-blue-50 dark:bg-blue-950/30 border-blue-200 dark:border-blue-900",
   },
   web: {
     label: "Web",
@@ -47,7 +48,7 @@ export function ArticleCard({ article, onEdit, onDelete }: ArticleCardProps) {
   const config = courseConfig[article.course];
 
   return (
-    <Card className="group relative overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+    <Card className="group relative overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 gap-1 py-1">
       <CardHeader className="p-0">
         {/* Thumbnail */}
         <a
@@ -123,7 +124,7 @@ export function ArticleCard({ article, onEdit, onDelete }: ArticleCardProps) {
         </div>
 
         {/* Title */}
-        <h3 className="font-semibold text-lg leading-snug line-clamp-2 tracking-tight">
+        <h3 className="font-semibold text-md leading-snug line-clamp-2 tracking-tight">
           {article.title}
         </h3>
 
@@ -152,9 +153,7 @@ export function ArticleCard({ article, onEdit, onDelete }: ArticleCardProps) {
         {/* Footer */}
         <div className="flex items-center justify-between text-xs text-muted-foreground pt-2 border-t">
           <span className="font-medium">{article.author}</span>
-          <time>
-            {format(article.createdAt, "yyyy/MM/dd", { locale: ja })}
-          </time>
+          <time>{format(article.createdAt, "yyyy/MM/dd", { locale: ja })}</time>
         </div>
       </CardContent>
     </Card>

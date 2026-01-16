@@ -57,6 +57,7 @@ export function ArticleForm({
   const [isLoading, setIsLoading] = useState(false);
   const [isFetchingOgp, setIsFetchingOgp] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   // Initialize form with data (for edit mode)
   useEffect(() => {
@@ -79,6 +80,7 @@ export function ArticleForm({
       setMemo("");
       setAuthor("");
       setErrors({});
+      setSubmitError(null);
     }
   }, [initialData, mode, open]);
 
@@ -148,6 +150,7 @@ export function ArticleForm({
     if (!validate()) return;
 
     setIsLoading(true);
+    setSubmitError(null);
     try {
       await onSubmit({
         url: url.trim(),
@@ -161,6 +164,11 @@ export function ArticleForm({
       onOpenChange(false);
     } catch (error) {
       console.error("Failed to submit:", error);
+      setSubmitError(
+        error instanceof Error
+          ? error.message
+          : "記事の保存に失敗しました。Firebaseの設定を確認してください。"
+      );
     } finally {
       setIsLoading(false);
     }
@@ -315,6 +323,13 @@ export function ArticleForm({
             )}
           </div>
         </div>
+
+        {/* Submit Error */}
+        {submitError && (
+          <div className="p-4 bg-destructive/10 border border-destructive/20 rounded-lg">
+            <p className="text-sm text-destructive">{submitError}</p>
+          </div>
+        )}
 
         <DialogFooter>
           <Button variant="outline" onClick={() => onOpenChange(false)}>

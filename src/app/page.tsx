@@ -204,7 +204,7 @@ export default function Home() {
 
         {/* Loading State */}
         {isLoading && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <LoadingState count={6} />
           </div>
         )}
@@ -228,7 +228,7 @@ export default function Home() {
               {filteredArticles.length !== articles.length &&
                 ` （全 ${articles.length} 件中）`}
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {filteredArticles.map((article) => (
                 <ArticleCard
                   key={article.id}
