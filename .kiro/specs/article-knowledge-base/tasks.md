@@ -20,13 +20,13 @@
   - _Requirements: 2.1, 2.6_
 
 - [ ] 2. データ層の実装
-- [ ] 2.1 記事データの型定義
+- [x] 2.1 記事データの型定義
   - Article 型と ArticleInput 型を定義する
   - Course 型（python, web, gameapp, other）を定義する
   - Firestore Timestamp と Date の変換ユーティリティを作成する
   - _Requirements: 7.2_
 
-- [ ] 2.2 記事サービスの実装
+- [x] 2.2 記事サービスの実装
   - Firestore への記事の追加機能を実装する
   - 記事一覧の取得機能を実装する（作成日時の降順）
   - 記事の更新機能を実装する（updatedAt を自動更新）
@@ -34,7 +34,7 @@
   - _Requirements: 1.4, 6.4, 6.6, 7.1, 7.2, 7.3, 7.4_
 
 - [ ] 3. API 層の実装
-- [ ] 3.1 OGP 取得 API エンドポイントの作成
+- [x] 3.1 OGP 取得 API エンドポイントの作成
   - Route Handler で URL パラメータを受け取る
   - open-graph-scraper を使用して OGP 情報を取得する
   - タイトル、サムネイル URL、説明を返却する
